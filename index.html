@@ -209,7 +209,7 @@
             }
 
             .custom-btn-wrapper {
-                bottom: 120px;
+                bottom: 210px;
             }
         }
 
@@ -281,6 +281,9 @@
             <div class="page-title">🍃 绿野仙踪</div>
             <div></div>
         </div> -->
+            <div class="custom-btn-wrapper" style="display: flex;">
+                <button class="jump-btn" id="openHospitalBtn">Open</button>
+            </div>
             <div class="scroll-indicator indicator-down">
                 <div class="indicator-content">
                     <span>↓</span>
@@ -294,6 +297,9 @@
             <div class="page-title">✨ 银河星野</div>
             <div></div>
         </div> -->
+            <div class="custom-btn-wrapper" style="display: flex;">
+                <button class="jump-btn" id="openAdBtn">Open</button>
+            </div>
             <!-- 最后一页底部标识：动态JS会改变成向上滑动或保留? 但为了满足始终出现滑动指引，将会变成 "向上滑动" 或返回顶部样式，文案变化，依然属于滑动标识，但明确告诉用户可以向上返回；不失优雅且符合交互 -->
             <div class="scroll-indicator indicator-up" id="lastIndicator">
                 <div class="indicator-content">
@@ -452,10 +458,27 @@
             // Android APP跳转功能
             const openAppBtn = document.getElementById('openAppBtn');
             if (openAppBtn) {
-                openAppBtn.addEventListener('click', function() {
+                openAppBtn.addEventListener('click', function () {
                     console.log('点击打开APP');
                     const appScheme = 'myapp://hotel'; // 替换为实际的APP URL Scheme
                     window.location.href = appScheme;
+                });
+            }
+            // 医院跳转功能
+            const openHospitalBtn = document.getElementById('openHospitalBtn');
+            if (openHospitalBtn) {
+                openHospitalBtn.addEventListener('click', function () {
+                    console.log('点击打开医院');
+                    window.location.href = 'video/play_hospital.html';
+                });
+            }
+
+            // 广告跳转功能
+            const openAdBtn = document.getElementById('openAdBtn');
+            if (openAdBtn) {
+                openAdBtn.addEventListener('click', function () {
+                    console.log('点击打开广告');
+                    window.location.href = 'video/play_ad.html';
                 });
             }
 
